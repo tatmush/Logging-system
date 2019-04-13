@@ -25,10 +25,15 @@ def index(request):
 				context = {
 					'state': False
 				}
-			else:
-				#user has logged on for the day
+			elif checkObject.checkOut == None and checkObject.checkIn.date()>=today :
+				#User has logged in but not logged out for the day
 				context = {
 					'state': True
+				}
+			else:
+				#user has logged in and logged out for the day
+				context = {
+					'state': None
 				}
 		
 		return render(request, 'check/index.html', context)	

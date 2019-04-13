@@ -11,6 +11,9 @@
 				<input id="checkOut" type="submit" name="submit" value="Check Out">
 				
 			</form>
+
+		{% elif state == None %}
+		<p>You are done for the day.</p>
 		{% else %}
 		<!-- if not checked in display check in button -->
 		<div class="formDiv">
