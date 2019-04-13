@@ -6,8 +6,11 @@ from django.utils import timezone
 class Check(models.Model):
 	"""docstring for check"""
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	checkIn = models.DateTimeField(auto_now_add=True)
-	checkOut = models.DateTimeField(default=timezone.now, null=True)
+	checkIn = models.DateTimeField('Check In Time', auto_now_add=True)
+	checkOut = models.DateTimeField('Check Out Time', default=timezone.now, null=True)
+
+	def __str__(self):
+		return str(self.user)
 '''
 class Profile(models.Model):
 	departments = (

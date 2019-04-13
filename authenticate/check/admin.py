@@ -11,6 +11,10 @@ class CheckAdmin(admin.ModelAdmin):
 
 	readonly_fields = ['checkIn',]
 
+	list_display = ('user', 'checkIn', 'checkOut')
+
+	list_filter = ['checkIn']
+
 	class Meta:
 		model = Check
 

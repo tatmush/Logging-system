@@ -35,8 +35,7 @@ def index(request):
 				context = {
 					'state': None
 				}
-		
-		return render(request, 'check/index.html', context)	
+			return render(request, 'check/index.html', context)
 	return render(request, 'check/index.html')
 
 		
